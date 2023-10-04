@@ -17,7 +17,7 @@ else:
 
 
 PATH = os.path.abspath(os.path.dirname(__file__))
-languages_url = "ipfs.io/ipfs/QmbRSZvfJV6zN12zzWhecphcvE9ZBeQdAJGQ9c9ttJXzcg/{lang}.tar.gz"
+languages_url = "https://ipfs.io/ipfs/QmbRSZvfJV6zN12zzWhecphcvE9ZBeQdAJGQ9c9ttJXzcg/{lang}.tar.gz"
 
 
 # credit: https://stackoverflow.com/questions/43370284/why-function-works-properly-without-specifying-parameters
