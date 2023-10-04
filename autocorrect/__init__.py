@@ -17,8 +17,7 @@ else:
 
 
 PATH = os.path.abspath(os.path.dirname(__file__))
-languages_url = "https://github.com/fsondej/autocorrect/raw/master/\
-optional_languages/{}.tar.gz"
+languages_url = "ipfs.io/ipfs/QmbRSZvfJV6zN12zzWhecphcvE9ZBeQdAJGQ9c9ttJXzcg/{lang}.tar.gz"
 
 
 # credit: https://stackoverflow.com/questions/43370284/why-function-works-properly-without-specifying-parameters
@@ -43,7 +42,7 @@ def load_from_tar(lang, file_name='word_count.json'):
 
     if not os.path.isfile(archive_name):
         print('dictionary for this language not found, downloading...')
-        url = languages_url.format(lang)
+        url = languages_url.format(lang=lang)
         progress = ProgressBar()
         urlretrieve(url, archive_name, progress.download_progress_hook)
 
@@ -53,7 +52,7 @@ def load_from_tar(lang, file_name='word_count.json'):
 
 
 class Speller:
-    def __init__(self, threshold=0, lang='en'):
+    def __init__(self, threshold=0, lang='en', ):
         self.threshold = threshold
         self.nlp_data = load_from_tar(lang)
         self.lang = lang
