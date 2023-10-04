@@ -79,7 +79,7 @@ class Speller:
                           self.existing(w.typos()) or
                           self.existing(w.double_typos()) or
                           [word])
-            return [(self.nlp_data.get(c), c) for c in candidates]
+            return [(self.nlp_data.get(c, 0), c) for c in candidates]
 
         candidates = get_candidates(word)
 
